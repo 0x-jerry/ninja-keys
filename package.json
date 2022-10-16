@@ -60,7 +60,8 @@
   "dependencies": {
     "@material/mwc-icon": "0.25.3",
     "hotkeys-js": "3.8.7",
-    "lit": "2.2.6"
+    "lit": "2.2.6",
+    "lit-html": "^2.4.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.5.3",
