@@ -52,6 +52,8 @@ export class NinjaAction extends LitElement {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      display: flex;
+      gap: 0.5em;
     }
     .ninja-hotkeys {
       flex-shrink: 0;
@@ -77,6 +79,16 @@ export class NinjaAction extends LitElement {
     }
     .ninja-hotkeys + .ninja-hotkeys {
       margin-left: 1em;
+    }
+
+    .ninja-tag {
+      background: var(--ninja-secondary-background-color);
+      padding: 0.06em 0.25em;
+      border-radius: var(--ninja-key-border-radius);
+      text-transform: capitalize;
+      color: var(--ninja-secondary-text-color);
+      font-size: 0.75em;
+      font-family: inherit;
     }
   `;
 
@@ -172,7 +184,12 @@ export class NinjaAction extends LitElement {
         class=${classMap(classes)}
       >
         ${icon}
-        <div class="ninja-title">${this.action.title}</div>
+        <div class="ninja-title">
+          ${this.action.title}
+          ${this.action.tags?.map(
+            (tag) => html` <code class="ninja-tag">${tag}</code> `
+          )}
+        </div>
         ${hotkey}
       </div>
     `;

@@ -7,6 +7,7 @@ export interface INinjaAction {
   icon?: string;
   parent?: string;
   keywords?: string;
+  tags?: string[]
   children?: string[];
   section?: string;
 }
